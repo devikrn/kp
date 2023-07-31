@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <div class="hero">
+            <div class="inner-wrapper">
+                <img class="toplogo" src="images/toplogo.svg">
+                <div class="header-middle">
+                    <h1 class="header-text">SORTING WORK ORDER</h1>
+                    <h2 class="cek">Cek WO</h2>
+                    <div class="unggah">
+                        <form id="uploadForm" onsubmit="return handleFormSubmission(event)">
+                            <label for="fileUpload">Pilih file:</label>
+                            <input type="file" id="fileUpload" name="fileUpload">
+                            <input type="submit" value="unggah">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const fileUpload = document.getElementById('fileUpload');
+
+            // Check if a file has been selected
+            if (fileUpload.files.length === 0) {
+                alert("Please select a file before proceeding.");
+                return false;
+            }
+
+            // Redirect to next_page.html after the form is submitted
+            window.location.href = 'next_page.html';
+            return false;
+        }
+    </script>
+</body>
+</html>

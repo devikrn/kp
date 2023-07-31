@@ -1,0 +1,80 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color:#ccc6c6 ;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.toplogo {
+    width: 1537px ;
+}
+
+.proses{
+    max-width: 1000px;
+    text-align: center;
+    background: url(images/Rectangle\ 6.svg);
+    padding: 25px;
+}
+
+/* CSS for the label element */
+label {
+    font-size: 18px;
+    color:black;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the <input> element when it's inside a <label> */
+  label input {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  
+  /* CSS for the label with class "proses" */
+  label.proses {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the radio button icon */
+  label.proses input[type="radio"] {
+    display: none;
+  }
+  
+  /* Styling for the custom radio button */
+  label.proses .custom-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* Styling for the custom radio button when it's selected */
+  label.proses input[type="radio"]:checked + .custom-radio::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #666;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Styling for the description text */
+  label.proses .description {
+    font-size: 16px;
+  }
+  

@@ -1,0 +1,68 @@
+:root {
+    --inner-wrapper: 980;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #ccc6c6;
+    font-family: 'Nunito', sans-serif;
+}
+
+.toplogo {
+    width: 1537px ;
+}
+
+.CekLog {
+    background-image: url(images/bg_CL.jpg);
+    max-width: 300px;
+    color: white;
+    text-align: center;
+    margin-left: 75px;
+    margin-top: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+}
+
+/* Gaya umum halaman */
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gaya untuk elemen tabel */
+.table-container {
+    width: 80%;
+    margin: 20px auto;
+    margin-left: 75px;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Gaya untuk header kolom tabel */
+#data-table th {
+    background-color: #0B215B;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+    color: white;
+}
+
+/* Gaya untuk sel (data) tabel */
+#data-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+    background-color: #C2CEED;
+}
+
+.detail{
+    margin-top: 30px;
+}

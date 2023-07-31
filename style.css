@@ -1,0 +1,50 @@
+:root {
+    --inner-wrapper: 980;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #ccc6c6;
+    font-family: 'Nunito', sans-serif;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+.inner-wrapper {
+    max-width: var(--inner-wrapper);
+    margin: 0 auto;
+}
+
+.toplogo {
+    width: 1537px ;
+}
+
+.header-middle {
+    max-width: 1000px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.header-text {
+    font-weight: 80px;
+    font-size: 64px;
+}
+
+.cek {
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.unggah {
+    max-width: 1000px;
+    text-align: center;
+    background: url(images/Rectangle\ 6.svg);
+    padding: 25px;
+
+}
