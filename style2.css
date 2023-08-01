@@ -13,7 +13,7 @@ body {
 }
 
 .toplogo {
-    width: 1537px ;
+    width: 100% ;
 }
 
 .proses{
@@ -21,14 +21,16 @@ body {
     text-align: center;
     background: url(images/Rectangle\ 6.svg);
     padding: 25px;
+    font-family: 'Nunito', sans-serif;
 }
 
-/* CSS for the label element */
-label {
+    /* CSS for the label element */
+  label {
     font-size: 18px;
     color:black;
     margin-bottom: 10px;
     cursor: pointer;
+    font-family: 'Nunito', sans-serif;
   }
   
   /* Styling for the <input> element when it's inside a <label> */
@@ -43,6 +45,7 @@ label {
     align-items: center;
     margin-right: 20px;
     cursor: pointer;
+    margin-top: 2px;
   }
   
   /* Styling for the radio button icon */
@@ -79,5 +82,5 @@ label {
   }
 
       
-  
+
   
