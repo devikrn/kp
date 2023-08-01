@@ -3,6 +3,7 @@ body {
     background-color:#ccc6c6 ;
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 .container {
@@ -10,6 +11,8 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    margin-top: 10%;
+    text-shadow: 20px;
 }
 
 .toplogo {
@@ -27,7 +30,7 @@ body {
     /* CSS for the label element */
   label {
     font-size: 18px;
-    color:black;
+    color: white;
     margin-bottom: 10px;
     cursor: pointer;
     font-family: 'Nunito', sans-serif;

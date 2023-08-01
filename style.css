@@ -10,6 +10,8 @@
 body {
     background: #ccc6c6;
     font-family: 'Nunito', sans-serif;
+    background-image: url(images/bg.jpg);
+    background-size: 100%;
 }
 
 #wrapper {
@@ -34,11 +36,13 @@ body {
 .header-text {
     font-weight: 80px;
     font-size: 64px;
+    color: white;
 }
 
 .cek {
     margin-top: 100px;
     margin-bottom: 0;
+    color: white;
 }
 
 .unggah {
@@ -46,5 +50,6 @@ body {
     text-align: center;
     background: url(images/Rectangle\ 6.svg);
     padding: 25px;
+    color: white;
 
 }
