@@ -1,4 +1,4 @@
-<?php
+    <?php
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css"/>
     <style>
         .visually-hidden {
             display: none;
@@ -61,11 +61,11 @@ if (isset($_POST['submit'])) {
                 <div class="header-middle">
                     <div class="animasi">
                         <img src="./images/animasi.gif" alt="animasi">
-                        <h1 class="header-text">SORTING WORK ORDER</h1>
+                        <h1 class="header-text">CHECKING WORK ORDER</h1>
                         <h2 class="cek">Cek WO</h2>
                     </div>
                     <div class="unggah">
-                        <form action="process.php" method="post" enctype="multipart/form-data">
+                        <form action="index.php" method="post" enctype="multipart/form-data">
                             <label for="file">Choose an Excel file to upload:</label>
                             <input type="file" id="file" name="file" accept=".xlsx, .xls, .csv">
 
@@ -80,6 +80,18 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+    <h3 class="cetak">
+
+                    <!-- Tautan atau tombol untuk mencetak seluruh halaman -->
+                    <button onclick="printPage()">Cetak Halaman</button>
+                
+                    <!-- Skrip JavaScript untuk membuat fitur cetak -->
+                    <script>
+                        function printPage() {
+                            window.print();
+                        }
+                    </script>
+                    </h3>
     <?php
     if (!empty($counts)) {
         echo "<h2>Count Results:</h2>";
@@ -114,6 +126,7 @@ if (isset($_POST['submit'])) {
         }
         echo "</table>";
     }
+
     ?>
     </section>
     <script>
