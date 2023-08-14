@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
 </head>
 <body style="overflow-y: scroll;">
 
@@ -18,7 +19,7 @@
                 <img class="toplogo" src="images/toplogo.svg">
                 <div class="header-middle">
                     <div class="animasi"><img src="./images/animasi.gif" alt="animasi"></div>
-                    <h1 class="header-text">SORTING WORK ORDER</h1>
+                    <h1 class="header-text">CHECKING WORK ORDER</h1>
                     <h2 class="cek">Cek WO</h2>
                     <div class="unggah">
                         <form id="uploadForm" onsubmit="return handleFormSubmission(event)">
@@ -32,6 +33,32 @@
             </div>
         </div>
     </div>
+    <h3 class="cetak">
+
+        <!-- Tautan atau tombol untuk mencetak seluruh halaman -->
+        <button onclick="printPage()">Cetak Halaman</button>
+    
+        <!-- Skrip JavaScript untuk membuat fitur cetak -->
+        <script>
+            function printPage() {
+                window.print();
+            }
+        </script>
+        </h3>
+    <div class="container">
+        <h1>Processing Options for Uploaded File</h1>
+        <div class="proses"><!-- Add a new <p> element with an ID to display the filename -->
+            <p id="uploadedFileName"></p>
+            <p>Select one option for processing the uploaded file:</p>
+            <form id="processingOptionsForm" onsubmit="return handleOptionSelection(event)">
+                <input type="radio" id="optionA" name="processingOption" value="Option A">
+                <label for="optionA">CEK MAN HOUR</label>
+                <input type="radio" id="optionB" name="processingOption" value="Option B">
+                <label for="optionB">CEK LOG</label><br>
+                <input type="submit" value="Process">
+            </form>
+        </div>
+        </div>
 
     <script>
         function handleFormSubmission(event) {
@@ -44,10 +71,46 @@
                 return false;
             }
 
-            // Redirect to next_page.html after the form is submitted
+          /*   // Redirect to next_page.html after the form is submitted -> dihapus biar ga ke next_page
             window.location.href = 'next_page.html';
-            return false;
+            return false; */
         }
     </script>
+
+<script>
+    function handleOptionSelection(event) {
+        event.preventDefault();
+        const selectedOption = document.querySelector('input[name="processingOption"]:checked');
+
+        // Check if an option has been selected
+        if (!selectedOption) {
+            alert("Please select one option before proceeding.");
+            return false;
+        }
+
+        // Get the file uploaded from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const uploadedFile = urlParams.get('fileUpload');
+
+        // Get the selected processing option
+        const selectedProcessingOption = selectedOption.value;
+
+        // Check the selected option and redirect accordingly
+        if (selectedProcessingOption === 'Option A') {
+            // Redirect to "Cek Man Hour" page with the uploaded file as a query parameter
+            window.location.href = `man_hour.html?fileUpload=${encodeURIComponent(uploadedFile)}`;
+        } else if (selectedProcessingOption === 'Option B') {
+            // Redirect to "Cek Log" page with the uploaded file as a query parameter
+            window.location.href = `Log.html?fileUpload=${encodeURIComponent(uploadedFile)}`;
+        }
+
+        return false;
+    }
+
+    // Code to display the filename on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Kode yang sudah ada untuk menampilkan nama file
+    });
+</script>
 </body>
 </html>
