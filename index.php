@@ -1,4 +1,4 @@
-    <?php
+<?php
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
     // Check ada file yang diupload atau gk
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
         // Define nama kolom yang mau diitung
-        $columnToCount = $_POST['processingOption'];
+        if(empty($_POST['processingOption'])) $columnToCount = 'Complete MH';
+        else $columnToCount = $_POST['processingOption'];
         
         // Ambil path file yang diupload
         $uploadedFilePath = $_FILES['file']['tmp_name'];
@@ -69,7 +70,7 @@ if (isset($_POST['submit'])) {
                             <label for="file">Choose an Excel file to upload:</label>
                             <input type="file" id="file" name="file" accept=".xlsx, .xls, .csv">
 
-                            <input type="radio" id="optionA" name="processingOption" value="Complete MH">
+                            <input type="radio" id="optionA" name="processingOption" value="Complete MH" checked>
                             <label for="optionA">Complete MH</label>
                             <input type="radio" id="optionB" name="processingOption" value="Complete Log">
                             <label for="optionB">Complete Log</label><br>
@@ -117,12 +118,30 @@ if (isset($_POST['submit'])) {
         echo '<input class="" type="text" id="myInput" onkeyup="debouncedSearch()" placeholder="Search...">';
         echo "<table border='1'>";
         foreach ($excelData as $row) {
-            echo '<tr id="kartu-'.$counter.'" class="card">';
-            foreach ($row as $cell) {
-                echo "<td>{$cell}</td>";
+            $complited = false;
+            if($counter > 0) {
+                if($columnToCount == 'Complete MH') {
+                    if($row[9] === 'Complete') $complited = true;
+                } else if ($columnToCount == 'Complete Log') {
+                    if($row[10] === 'Complete') $complited = true;
+                }
             }
-            echo "</tr>";
-            $counter++;
+            if($complited == false) {
+                echo '<tr id="kartu-'.$counter.'" class="card">';
+                foreach ($row as $index => $cell) {
+                    if($index <= 8) {
+                        echo "<td>{$cell}</td>";
+                    }
+                }
+                if($columnToCount == 'Complete MH') {
+                    echo "<td>{$row[9]}</td>";
+                }
+                if($columnToCount == 'Complete Log') {
+                    echo "<td>{$row[10]}</td>";
+                }
+                echo "</tr>";
+                $counter++;
+            }
         }
         echo "</table>";
     }
